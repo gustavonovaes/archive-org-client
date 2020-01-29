@@ -1,6 +1,6 @@
 <?php
 
-namespace GNovaes\ArchiveOrg\Test\Unit;
+namespace GNovaes\Test\ArchiveOrg\Unit;
 
 use GNovaes\ArchiveOrg\Item\Metadata;
 use PHPUnit\Framework\TestCase;

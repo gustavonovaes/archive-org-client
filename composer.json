@@ -5,12 +5,12 @@
     },
     "autoload": {
         "psr-4": {
-            "GNovaes\\ArchiveOrg\\": "src/"
+            "GNovaes\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "GNovaes\\ArchiveOrg\\Test\\": "tests/"
+            "GNovaes\\Test\\": "tests/"
         }
     },
     "scripts": {

@@ -1,6 +1,6 @@
 <?php
 
-namespace GNovaes\ArchiveOrg\Test\Integration;
+namespace GNovaes\Test\ArchiveOrg\Integration;
 
 use PHPUnit\Framework\TestCase;
 
