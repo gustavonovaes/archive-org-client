@@ -2,6 +2,7 @@
 
 namespace GNovaes\CLI;
 
+use GNovaes\CLI\Exceptions\CommandNotFoundException;
 use GNovaes\CLI\Interfaces\CommandInterface;
 
 class CLI
@@ -33,8 +34,21 @@ class CLI
     $command->run($commandArgs);
   }
 
+  /**
+   * Return a command.
+   * 
+   * @param string $commandName
+   * 
+   * @throws CommandNotFoundException When command was not loaded.
+   *
+   * @return \GNovaes\CLI\Interfaces\CommandInterface
+   */
   private function getCommand(string $commandName): CommandInterface
   {
+    if (!isset($this->commands[$commandName])) {
+      throw new CommandNotFoundException("Command \"{$commandName}\" does not exists.");
+    }
+
     return $this->commands[$commandName];
   }
 }
