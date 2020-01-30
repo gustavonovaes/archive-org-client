@@ -3,6 +3,7 @@
 namespace GNovaes\CLI;
 
 use GNovaes\CLI\Exceptions\CommandNotFoundException;
+use GNovaes\CLI\Exceptions\CommandNotPassedException;
 use GNovaes\CLI\Interfaces\CommandInterface;
 
 class CLI
@@ -25,8 +26,26 @@ class CLI
     }
   }
 
+  /**
+   * Run the CLI
+   * 
+   * $args[]
+   *  [0] string Executable name
+   *  [1] string Command name
+   *  [...] string (rest of args)
+   * 
+   * @param array $args (see above)
+   * 
+   * @throws CommandNotPassedException When a command is not passed.
+   *
+   * @return void
+   */
   public function run(array $args = []): void
   {
+    if (!isset($args[1])) {
+      throw new CommandNotPassedException("The command name was not passed in args.");
+    }
+
     $command = $this->getCommand($args[1]);
 
     $commandArgs = \array_slice($args, 2);
