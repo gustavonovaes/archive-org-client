@@ -1,12 +1,11 @@
 <?php
 
-namespace GNovaes\CLI\Test\Unit;
+namespace GNovaes\Test\CLI\Unit;
 
 use GNovaes\CLI\CLI;
 use GNovaes\CLI\Exceptions\CommandNotFoundException;
 use GNovaes\CLI\Exceptions\CommandNotPassedException;
 use GNovaes\CLI\Interfaces\CommandInterface;
-use GNovaes\CLI\Interfaces\PrinterInterface;
 use PHPUnit\Framework\TestCase;
 
 class CLITest extends TestCase
@@ -15,10 +14,7 @@ class CLITest extends TestCase
 
   public function setUp(): void
   {
-    $printerMock = $this->createMock(PrinterInterface::class);
-    $printerMock->method('display');
-
-    $this->cli = new CLI($printerMock);
+    $this->cli = new CLI();
   }
 
   public function testRunACommand()
