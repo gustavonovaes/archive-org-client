@@ -8,7 +8,7 @@ use GNovaes\CLI\Commands\GetMetadata as CommandsGetMetadata;
 use GNovaes\CLI\Interfaces\PrinterInterface;
 use PHPUnit\Framework\TestCase;
 
-class GetMetadata extends TestCase
+class GetMetadataTest extends TestCase
 {
   public function testItWorks()
   {
